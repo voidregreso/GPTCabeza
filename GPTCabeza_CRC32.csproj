@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPFHexaEditor" Version="2.1.7" />
+  </ItemGroup>
+
+</Project>

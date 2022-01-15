@@ -1,0 +1,30 @@
+﻿<Window x:Class="GPTCabeza_CRC32.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:control="clr-namespace:WpfHexaEditor;assembly=WPFHexaEditor"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="GPT Hard Drive Utility" Height="700" Width="900" ResizeMode="CanMinimize">
+    <Grid HorizontalAlignment="Left" Width="900">
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="laLista" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="16,20,389,526"
+                  SelectedIndex="0" SelectionChanged="laLista_Seleccionar">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Disk Physical Path" Width="240" DisplayMemberBinding="{Binding Path}"/>
+                    <GridViewColumn Header="Disk Name" Width="240" DisplayMemberBinding="{Binding SerName}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <control:HexEditor x:Name="mainhex" Width="Auto" Height="Auto" Margin="41,208,389,39"/>
+        <Label Content="GPT Header HexDump" HorizontalAlignment="Left" Margin="53,169,0,0" VerticalAlignment="Top" Width="265" Height="28" FontSize="13"/>
+        <RadioButton x:Name="prh_radio" Content="Primary GPT Header" HorizontalAlignment="Left" Margin="556,49,0,0" VerticalAlignment="Top" Checked="prh_radio_Checked" IsChecked="True"/>
+        <RadioButton x:Name="bah_radio" Content="Backup GPT Header" HorizontalAlignment="Left" Margin="726,49,0,0" VerticalAlignment="Top" Checked="bah_radio_Checked"/>
+        <GroupBox Header="HardDisk Common Information" Margin="556,89,36,424">
+            <TextBlock x:Name="atras" TextWrapping="Wrap" Height="146" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="276"/>
+        </GroupBox>
+    </Grid>
+</Window>
